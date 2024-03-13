@@ -366,7 +366,7 @@ Spark 还支持把数据集拉到集群范围的内存缓存中。当数据需�
   from pyspark.sql import SparkSession
 
   logFile = "YOUR_SPARK_HOME/README.md"  # Should be some file on your system
-  spark = SparkSession.builder().appName(appName).master(master).getOrCreate()
+  spark = SparkSession.builder.appName(appName).master(master).getOrCreate()
   logData = spark.read.text(logFile).cache()
 
   numAs = logData.filter(logData.value.contains('a')).count()
